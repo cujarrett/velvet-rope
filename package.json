@@ -1,0 +1,49 @@
+{
+  "name": "velvet-rope",
+  "version": "0.1.0",
+  "description": "Block installs of packages published within a configurable minimum age — a velvet rope for your dependencies",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "velvet-rope": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ci": "npm run lint && npm run format:check && npm run test",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "npm",
+    "security",
+    "supply-chain",
+    "velvet-rope",
+    "minimum-release-age"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cujarrett/velvet-rope.git"
+  },
+  "homepage": "https://github.com/cujarrett/velvet-rope#readme",
+  "bugs": {
+    "url": "https://github.com/cujarrett/velvet-rope/issues"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

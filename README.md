@@ -1,5 +1,3 @@
-# velvet-rope
-
 ![logo](logo.png)
 
 On May 11, 2026, an attacker published 84 malicious versions across 42 `@tanstack/*` packages. The window between "published" and "detected" was 20 minutes. Anyone who ran `npm install` in that window ran credential-harvesting malware on their machine.
@@ -14,7 +12,7 @@ Renovate has `minimumReleaseAge`, but that only gates automated PRs — it doesn
 
 Wraps `npm install` and checks the publish date of each package against the npm registry. If any package was published within the configured minimum age, the install fails with a clear error.
 
-```
+```bash
 velvet-rope install @tanstack/react-router
 
 ✗ @tanstack/react-router@1.169.5 was published 2 days ago (minimum: 7 days)
@@ -63,7 +61,3 @@ velvet-rope install --force        # explicit override, logs a warning
 ```
 
 Bypasses are always logged. There's no silent skip.
-
-## Status
-
-Early development. Feedback welcome.
